@@ -1,0 +1,242 @@
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(210, 80%, 54%);
+    --first-color-alt: hsl(210, 80%, 50%);
+    --title-color: hsl(210, 24%, 90%);
+    --text-color: hsl(210, 16%, 70%);
+    --white-color: #fff;
+    --body-color: hsl(210, 32%, 4%);
+}
+
+
+/* ==== Config ==== */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 62.5% ==> 10px */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-family: "Poppins-Medium";
+}
+
+/* ==== Reset ==== */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ==== Start ==== */
+.header {
+    background-image: linear-gradient(rgba(59, 55, 53, .5), rgba(59, 55, 53, .5)),
+        url("../images/cris-dinoto-K6qH4pYiKvs-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding-top: 3rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222222;
+    height: 6rem;
+    border-radius: 10rem;
+    padding: 0 3rem;
+}
+
+.app-logo {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.app-logo__text {
+    font-family: "Dancing-Bold";
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+.app-logo__img {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-10deg);
+}
+
+.menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 3rem;
+}
+
+.menu__item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.menu__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--title-color);
+    width: 0;
+    height: .3rem;
+    transition: .4s;
+}
+
+.menu__item:hover::before {
+    width: 100%;
+}
+
+.menu__link {
+    color: var(--white-color);
+    font-family: "Poppins-Medium";
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: .4s;
+}
+
+.menu__item .menu__icon {
+    transition: .4s;
+}
+
+.menu__item:hover .menu__icon {
+    transform: rotate(-180deg);
+}
+
+.menu__item {
+    position: relative;
+}
+
+.sub-menu {
+    background: #434242;
+    width: 13rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.menu__item:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.sub-menu__item {
+    position: relative;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.sub-menu__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #F3EFE0;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.sub-menu__item .sub-menu__icon {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    color: #F3EFE0;
+}
+
+.sub-menu__item:hover .sub-menu__icon {
+    opacity: 1;
+    visibility: visible;
+    left: 76%;
+}
+
+.sub-menu__item ul {
+    background-color: #434242;
+    position: absolute;
+    top: 0;
+    left: 90%;
+    width: 8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.sub-menu__item:hover ul {
+    opacity: 1;
+    visibility: visible;
+    left: 100%;
+}
+
+.sub-menu__item>ul {
+    border-radius: 0;
+}
+
+.sub-menu__item>ul>li>a {
+    font-family: "Poppins-SemiBold";
+    color: #F3EFE0;
+    font-size: 1.5rem;
+}
+
+.header-content {
+    margin-top: 20rem;
+    text-align: center;
+}
+
+.header-content__title {
+    font-family: "Dancing-Bold";
+    font-size: 8rem;
+    color: #000000;
+}
+
+.header-content__text {
+    font-family: "Poppins-SemiBold";
+    font-size: 1.8rem;
+    max-width: 60rem;
+    margin: 1rem auto 2rem auto;
+    color: #222222;
+}
+
+.header-content__btn {
+    width: 20rem;
+    height: 5rem;
+    background-color: #434242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    color: var(--white-color);
+    font-family: "Poppins-SemiBold";
+    margin: 0 auto;
+}
+
+/* ==== Finish ==== */
